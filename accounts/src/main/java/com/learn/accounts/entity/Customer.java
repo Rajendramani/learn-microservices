@@ -1,9 +1,12 @@
 package com.learn.accounts.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,9 +19,14 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Customer extends BaseEntity{
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.AUTO)
-    private Long customer_id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "customer_id")
+    private Long customerId;
+    @Column(name = "name")
     private String name;
+    @Column(name = "email")
     private String email;
-    private String mobile_number;
+    @Column(name = "mobile_number")
+    private String mobileNumber;
+   
 }

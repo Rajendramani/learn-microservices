@@ -1,7 +1,8 @@
 package com.learn.accounts.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,10 +13,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Accounts extends BaseEntity{
-    private long customer_id;
+public class Accounts extends BaseEntity {
+    @Column(name = "customer_id")
+    private long customerId;
     @Id
-    private long account_number;
-    private String account_type;
-    private String branch_address;
+    @Column(name = "account_number")
+    private long accountNumber;
+    @Column(name = "account_type")
+    private String accountType;
+    @Column(name = "branch_address")
+    private String branchAddress;
 }
