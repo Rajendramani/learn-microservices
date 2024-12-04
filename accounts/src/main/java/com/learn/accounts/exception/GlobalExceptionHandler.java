@@ -32,7 +32,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             validationErrors.put(fieldName, errorMessage);
         });
 
-        return new ResponseEntity<>(validationErrors, HttpStatus.BAD_REQUEST)
+        return new ResponseEntity<>(validationErrors, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(CustomerAlreadyExistException.class)
